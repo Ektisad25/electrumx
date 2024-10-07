@@ -26,6 +26,8 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # and warranty status of this software.
 
+
+
 '''Transaction-related classes and functions.'''
 
 from collections import namedtuple
@@ -274,6 +276,11 @@ class Deserializer(object):
     def _read_le_uint32(self):
         result, = unpack_le_uint32_from(self.binary, self.cursor)
         self.cursor += 4
+        return result
+
+    def _read_le_uint64(self):
+        result, = unpack_le_uint64_from(self.binary, self.cursor)
+        self.cursor += 8
         return result
 
     def _read_le_uint64(self):
