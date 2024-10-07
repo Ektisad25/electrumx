@@ -202,6 +202,7 @@ class History(object):
                 yield tx_num
                 limit -= 1
 
+
     #
     # History compaction
     #
